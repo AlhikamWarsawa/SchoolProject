@@ -1,0 +1,105 @@
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: sans-serif;
+    font-weight: 300;
+    color: hsl(0 0% 15%);
+  }
+
+  h2 {
+    font-weight: 400;
+    margin: 2rem 0 0.25rem 0;
+  }
+
+  h1 {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    opacity: 0.5;
+    margin: 0;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  body {
+    display: flex; /* Changed from grid to flex */
+    flex-wrap: wrap; /* Allows items to wrap to the next line if needed */
+    justify-content: center; /* Centers items horizontally */
+    align-items: center; /* Centers items vertically */
+    gap: 20px; /* Adds space between the items */
+    min-height: 100vh;
+    padding: 20px; /* Adds some padding around the edges */
+  }
+
+  figure {
+    width: 500px;
+    aspect-ratio: 8 / 5;
+    --bg: hsl(330 80% calc(90% - (var(--hover) * 10%)));
+    --accent: #3b5d50;
+    transition: background 0.2s;
+    background: radial-gradient(
+        circle at top left,
+        var(--accent),
+        transparent 75%
+      ),
+      var(--bg);
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    border-radius: 1.5rem;
+  }
+
+  figure:after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    bottom: 0%;
+    left: 10%;
+    background: linear-gradient(-65deg, var(--bg) 50%, var(--accent) 50%);
+    filter: blur(25px);
+    transform: translateX(calc(var(--hover) * 15%))
+      scale(calc(1 + (var(--hover) * 0.2)));
+    transition: transform 0.2s, background 0.2s;
+  }
+
+  img {
+    position: absolute;
+    left: 15%;
+    top: 9%;
+    width: 100%;
+    transform: translateX(calc(var(--hover) * -15%))
+      scale(calc(1 + (var(--hover) * 0.2)));
+    transition: transform 0.5s;
+  }
+
+  article {
+    --hover: 0;
+  }
+
+  article:hover {
+    --hover: 1;
+  }
+
+  a {
+    text-decoration: none;
+  }
+</style>
+
+<a
+  href="https://sites.google.com/smk.belajar.id/alhikam-portofolio/portfolio/school_project/s1"
+>
+  <article>
+    <figure>
+      <img src="A1.png" alt="" />
+    </figure>
+    <h2>Design Modern Interior Furni</h2>
+    <p>UI/UX • 16/10/23</p>
+  </article>
+</a>
